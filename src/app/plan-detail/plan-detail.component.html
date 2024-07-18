@@ -1,0 +1,65 @@
+<div class="mb-3 mt-3 row">
+    <form [formGroup]="planDetForm" (ngSubmit)="onSubmit(planDetForm)">
+
+        @if(formComp === 'exist') {
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">
+                    Existing Plan
+                </label>
+                <div class="col-sm-6">
+                    <input class="form-control" formControlName="existPlanName" readonly>
+                </div>
+            </div>
+        }
+
+        <div class="mb-3 row">
+            <select class="form-select form-select-md mb-3" (change)="changeVal($event)" formControlName="newPlanName">
+                <option value="">Choose your Plan</option>
+                <option *ngFor="let plan of Plans" [ngValue]="plan">{{plan}}</option>
+            </select>
+            <!-- error block -->
+            <div class="invalid-feedback" *ngIf="planDetForm?.get('newPlanName')?.invalid">
+                <sup>*</sup>Please Select Your plan
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <select class="form-select form-select-md mb-3" (change)="changeVal($event)" formControlName="cost">
+                <option value="">Choose your cost</option>
+                <option *ngFor="let cos of Costs" [ngValue]="cos">{{cos}}</option>
+            </select>
+            <!-- error block -->
+            <div class="invalid-feedback" *ngIf="planDetForm?.get('cost')?.invalid">
+                <sup>*</sup>Please Select Your cost
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <select class="form-select form-select-md mb-3" (change)="changeVal($event)" formControlName="validity">
+                <option value="">Choose your validity</option>
+                <option *ngFor="let vali of Validities" [ngValue]="vali">{{vali}}</option>
+            </select>
+            <!-- error block -->
+            <div class="invalid-feedback" *ngIf="planDetForm?.get('validity')?.invalid">
+                <sup>*</sup>Please Select Your validity
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <select class="form-select form-select-md mb-3" (change)="changeVal($event)" formControlName="status">
+                <option value="">Choose Staus</option>
+                <option *ngFor="let setStatus of Statuses" [ngValue]="setStatus">{{setStatus}}</option>
+            </select>
+            <!-- error block -->
+            <div class="invalid-feedback" *ngIf="planDetForm?.get('status')?.invalid">
+                <sup>*</sup>Please Select Your status
+            </div>
+        </div>
+
+        @if(formComp === 'newCust') {
+            <button type="submit" class="btn btn-primary" [disabled]="planDetForm.invalid">Create Customer</button>
+        } @else {
+            <button type="submit" class="btn btn-primary" [disabled]="planDetForm.invalid">Update Customer Plans</button>
+        }
+    </form>
+</div>

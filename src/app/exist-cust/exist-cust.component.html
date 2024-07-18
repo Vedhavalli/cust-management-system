@@ -1,0 +1,27 @@
+<div class="mb-3 mt-3 row">
+    @if (!isSubmitted){
+    <div>
+        <form [formGroup]="existForm" (ngSubmit)="onSubmit(existForm)">
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">
+                    Renewal Date
+                </label>
+                <div class="col-sm-6">
+                    <input class="form-control" formControlName="renewDate" readonly>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">
+                    Plan Status
+                </label>
+                <div class="col-sm-6">
+                    <input class="form-control" formControlName="curStatus" readonly>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Plans</button>
+        </form>
+    </div>
+    } @else {
+    <app-plan-detail [customerDetail]=customerDetail formComp="exist"></app-plan-detail>
+    }
+</div>

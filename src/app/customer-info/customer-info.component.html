@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">Aadhar</th>
+                    <th scope="col">Mobile No</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Reg No</th>
+                    <th scope="col">Plan Name</th>
+                    <th scope="col">Plan Cost</th>
+                    <th scope="col">Plan Status</th>
+                    <th scope="col">Renewal Date</th>
+                    <th scope="col">Validity</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(customer of customerList; track customer.id) {
+                    <tr>
+                        <th scope="row">{{customer.id}}</th>
+                        <td>{{customer.name}}</td>
+                        <td>{{customer.dob}}</td>
+                        <td>{{customer.aadhar}}</td>
+                        <td>{{customer.mobNo}}</td>
+                        <td>{{customer.email}}</td>
+                        <td>{{customer.regNo}}</td>
+                        <td>{{customer.planName}}</td>
+                        <td>{{customer.planCost}}</td>
+                        <td>{{customer.planStatus}}</td>
+                        <td>{{customer.renewalDate}}</td>
+                        <td>{{customer.validity}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

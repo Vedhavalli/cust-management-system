@@ -1,0 +1,46 @@
+{
+    "customers": [
+      {
+        "id": 1,
+        "name": "John",
+        "dob": "31/Jan/1984",
+        "email": "john84@gmail.com",
+        "aadhar": "123412341234",
+        "regNo": "Re2341",
+        "mobNo": "1234567890",
+        "planName": "Platinum365",
+        "planCost": "499",
+        "planStatus": "Active",
+        "validity": "365",
+        "renewalDate": "01/Dec/2025"
+      },
+      {
+        "id": 2,
+        "name": "Mira",
+        "dob": "10/Jun/1997",
+        "email": "mira@gmail.com",
+        "aadhar": "345512344565",
+        "regNo": "Re2341",
+        "mobNo": "1234567890",
+        "planName": "Platinum365",
+        "planCost": "499",
+        "planStatus": "Active",
+        "validity": "365",
+        "renewalDate": "01/Oct/2024"
+      },
+      {
+        "id": 3,
+        "name": "William",
+        "dob": "22/Dec/1994",
+        "email": "william@gmail.com",
+        "aadhar": "352412342345",
+        "regNo": "Re2341",
+        "mobNo": "1234567890",
+        "planName": "Platinum365",
+        "planCost": "499",
+        "planStatus": "Active",
+        "validity": "365",
+        "renewalDate": "01/Sep/2025"
+      }
+    ]
+  }

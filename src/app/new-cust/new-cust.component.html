@@ -1,0 +1,77 @@
+<div class="mb-3 mt-3 row">
+    <form [formGroup]="custForm" (ngSubmit)="onSubmit(custForm)">
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">
+                First Name
+            </label>
+            <div class="col-sm-6">
+                <input class="form-control" formControlName="firstName" placeholder="First name">
+            </div>
+            <div
+                *ngIf="custForm?.get('firstName')?.invalid && (custForm?.get('firstName')?.dirty || custForm?.get('firstName')?.touched)">
+                Please provide a First name.
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">
+                Last Name
+            </label>
+            <div class="col-sm-6">
+                <input class="form-control" formControlName="lastName" placeholder="Last name">
+            </div>
+            <div
+                *ngIf="custForm?.get('lastName')?.invalid && (custForm?.get('lastName')?.dirty || custForm?.get('lastName')?.touched)">
+                Please provide a Last name.
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">
+                Email
+            </label>
+            <div class="col-sm-6">
+                <input class="form-control" formControlName="email" placeholder="Your email">
+            </div>
+            <div
+                *ngIf="custForm?.get('email')?.invalid && (custForm?.get('email')?.dirty || custForm?.get('email')?.touched)">
+                Please provide a valid email address.
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">
+                Aadhar Number
+            </label>
+            <div class="col-sm-6">
+                <input class="form-control" formControlName="aadharNo" placeholder="Aadhar Number">
+            </div>
+            <div
+                *ngIf="custForm?.get('aadharNo')?.invalid && (custForm?.get('aadharNo')?.dirty || custForm?.get('aadharNo')?.touched)">
+                Aadhar Number must be 12 digits
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">
+                Registration Date
+            </label>
+            <div class="col-sm-6">
+                <input type="date" class="form-control" formControlName="regDate" placeholder="Registration Date">
+            </div>
+            <div
+                *ngIf="custForm?.get('regDate')?.invalid && (custForm?.get('regDate')?.dirty || custForm?.get('regDate')?.touched)">
+                Registration Date Required
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">
+                Mobile Number
+            </label>
+            <div class="col-sm-6">
+                <input class="form-control" formControlName="mobileNo" placeholder="Mobile Number">
+            </div>
+            <div
+                *ngIf="custForm?.get('mobileNo')?.invalid && (custForm?.get('mobileNo')?.dirty || custForm?.get('mobileNo')?.touched)">
+                Mobile Number must be 10 digits.
+            </div>
+        </div>
+    </form>
+    <app-plan-detail formComp="newCust"></app-plan-detail>
+</div>
